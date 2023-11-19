@@ -1,0 +1,53 @@
+#ROLL_NUMBER:21K-3075
+#Name:Izaan ahmed
+
+
+def display_menu():
+    print("1. Display the bill of slab 1 and slab 2.")
+    print("2. Display the bill of slab 3.")
+    print("Press any other key to exit.")
+
+def cost_slab1(matrix):
+    unit_range = (0, 100)
+    cost_per_unit = 10
+    row = 0
+    total_units = sum(matrix[row][unit_range[0]:unit_range[1] + 1])
+    total_cost = total_units * cost_per_unit
+    print(f"Bill for Slab 1 (Units: {total_units}, Cost per unit: Rs.{cost_per_unit}, Total Cost: Rs.{total_cost})")
+
+def cost_slab2(matrix):
+    unit_range = (101, 200)
+    cost_per_unit = 15
+    row = 1
+    total_units = sum(matrix[row][unit_range[0]:unit_range[1] + 1])
+    total_cost = total_units * cost_per_unit
+    print(f"Bill for Slab 2 (Units: {total_units}, Cost per unit: Rs.{cost_per_unit}, Total Cost: Rs.{total_cost})")
+
+def cost_slab3(matrix):
+    unit_range = (201, 300)
+    cost_per_unit = 20
+    row = 2
+    total_units = sum(matrix[row][unit_range[0]:unit_range[1] + 1])
+    total_cost = total_units * cost_per_unit
+    print(f"Bill for Slab 3 (Units: {total_units}, Cost per unit: Rs.{cost_per_unit}, Total Cost: Rs.{total_cost})")
+
+# Source Data
+electricity_matrix = [
+    [10, 15, 20, ],  # Row for Slab 1
+    [25, 30, 35, ],  # Row for Slab 2
+    [40, 45, 50, ]  # Row for Slab 3
+    # Add more rows as needed
+]
+
+while True:
+    display_menu()
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        cost_slab1(electricity_matrix)
+        cost_slab2(electricity_matrix)
+    elif choice == '2':
+        cost_slab3(electricity_matrix)
+    else:
+        print("Program terminated.")
+        break
